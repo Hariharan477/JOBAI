@@ -1,0 +1,6 @@
+{
+  "name": "JOBAI",
+  "description": "Explainable job-skill matcher with gap analysis, career path guidance, and what-if simulation. Deterministic matching + AI reasoning.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
