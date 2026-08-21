@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+/* --------------------------------------------------------------------------
+   JOBAI Design System
+   Color theory: Analogous cool neutrals + single high-chroma accent (blue)
+   with complementary teal for success/positive signals. WCAG AA contrast.
+   -------------------------------------------------------------------------- */
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  color-scheme: light;
+
+  --bg-app: #f4f6fa;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f8fafc;
+  --bg-muted: #eef2f7;
+  --bg-overlay: rgba(15, 23, 42, 0.45);
+
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  --primary: #1e3a5f;
+  --primary-hover: #152a45;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: #eff6ff;
+  --accent-ring: rgba(37, 99, 235, 0.35);
+
+  --success: #059669;
+  --success-soft: #ecfdf5;
+  --warning: #d97706;
+  --warning-soft: #fffbeb;
+  --error: #dc2626;
+  --error-soft: #fef2f2;
+  --info: #0284c7;
+  --info-soft: #f0f9ff;
+
+  --teal: #0d9488;
+  --teal-soft: #f0fdfa;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.08), 0 4px 8px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 0 0 3px var(--accent-ring);
+}
+
+html.dark,
+:root[data-theme="dark"],
+.dark {
+  color-scheme: dark;
+
+  --bg-app: #0a0f1a;
+  --bg-surface: #111827;
+  --bg-elevated: #1a2332;
+  --bg-muted: #1e293b;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+
+  --text-main: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+
+  --border-subtle: #1e293b;
+  --border-strong: #334155;
+
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --accent-soft: rgba(59, 130, 246, 0.12);
+  --accent-ring: rgba(59, 130, 246, 0.4);
+
+  --success: #10b981;
+  --success-soft: rgba(16, 185, 129, 0.12);
+  --warning: #f59e0b;
+  --warning-soft: rgba(245, 158, 11, 0.12);
+  --error: #ef4444;
+  --error-soft: rgba(239, 68, 68, 0.12);
+  --info: #38bdf8;
+  --info-soft: rgba(56, 189, 248, 0.12);
+
+  --teal: #14b8a6;
+  --teal-soft: rgba(20, 184, 166, 0.12);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45), 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 0 3px var(--accent-ring);
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
